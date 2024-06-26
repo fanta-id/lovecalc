@@ -3,78 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOVE CALCULATOR</title>
+<link rel="icon" type="image/png" href="icon.png">
+    <title>Love Calc</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script type="text/javascript" src="script.js"></script>
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script defer src="app.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .btn-primary, .btn-secondary {
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background-color: #6c63ff;
+            border-color: #6c63ff;
+        }
+        .btn-secondary {
+            background-color: #ff6584;
+            border-color: #ff6584;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #5145cd;
+            border-color: #5145cd;
+        }
+        #hasilCinta {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        header, footer {
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .romantic-article {
+            font-size: 1.1rem;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .navbar-nav .nav-link {
+            color:;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #6c63ff;
+        }
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3e%3cpath stroke="rgba(0,0,0,.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e');
+        }
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #333;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #6c63ff;
+            background-color: transparent;
+        }
+        .navbar-nav .active .nav-link {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- HERO SECTION START-->
-
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ms-3 me-3">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img src="images/logo.png" height="80px">
-        <span class="fs-4"><strong>Love Calci</strong> <p class="fs-6">Where Numbers Meet Affection</p></span>
-        
-      </a>
-      
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        
-       
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-      </ul>
+    <header class="py-3">
+        <a href="/" class="text-dark text-decoration-none">
+            <span class="navbar-brand">Love Calc</span>
+        </a>
     </header>
-<!--HEADER SECTION END-->
-<!-- HERO/BODY SECTION START-->
 
-<div class="row flex-lg-row-reverse align-items-center g-5 py-5 ms-3 me-3">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <img src="images/White Love Heart-Shaped Photo Collage.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-    </div>
-    <div class="col-lg-6">
-      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Unlocking the Equation of Love</h1>
-      <p class="lead">Discover the alchemy of affection as you input your names and witness the mystical formula unfold, offering insights into the compatibility of your unique connection. <br>Whether it's a fun exploration or a serious revelation, our Love Calculator adds a touch of charm to the quest for romantic understanding. <br>Embrace the science of love and let the digits weave a tale of connection and companionship!</p>
-      
-      <form> 
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="yourname" name="yourname" required>
+    <!-- Navigasi Minimalis -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about.html">Tentang Aplikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fanta-id.github.io">Author</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Your Partner Name</label>
-          <input type="text" class="form-control" id="partnername" name="partnername" required>
+    </nav>
+
+    <div class="container">
+        <div class="romantic-article">
+            <p>Hal paling menyakitkan itu ya, kehilangan diri sendiri di tengah proses cinta yang berlebihan. Sampe lupa bahwa diri kamu juga punya nilai spesial. Kadang terlalu fokus sama orang lain, kamu lupa ngerawat dan ngasih perhatian buat diri sendiri. Jangan biarkan cinta ke orang lain bikin kamu kehilangan identitas. Kamu juga berharga banget dan pantas dapetin cinta dan perhatian, dari orang lain dan dari diri sendiri juga.</p>
+            <p>Kalkulator cinta ini membantu kita mengukur sejauh mana kedekatan kita dengan seseorang yang kita cintai. Meskipun angka persentasenya hanya sejumlah dan hanya untuk hiburan, yang terpenting adalah apa yang kita lakukan untuk membuat cinta ini tumbuh lebih dalam setiap hari.</p>
         </div>
-        
-        <button type="button" id="submitbutton" class="btn btn-primary" onclick="loveCalc();">Calculate your Love Percentage</button>
-      </form>
-      
-      
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <form id="formCinta">
+                    <div class="mb-3">
+                        <label for="namaKamu" class="form-label">Nama Kamu</label>
+                        <input type="text" class="form-control" id="namaKamu" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namaPasangan" class="form-label">Nama Pasangan</label>
+                        <input type="text" class="form-control" id="namaPasangan" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung Persentase Cinta</button>
+                    <button type="button" class="btn btn-secondary" id="clearBtn">Bersihkan</button>
+                </form>
+                <div id="hasilCinta" class="mt-3 text-center"></div>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-success rounded-pill px-3" type="button" id="lovePercent">Your Love Percentage</button>
-  </div>
 
-  <!--HERO/BODY SECTION END-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-   
-  <!--FOOTER SECTION START-->
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="text-muted">© 2023 Company, Inc</span>
-    </div>
+    <footer>
+        <div class="footer-text">
+            <span class="text-muted">© 2024 Love Calc</span>
+        </div>
+    </footer>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-    </ul>
-  </footer>
-  <!--FOOTER SECTION END-->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
